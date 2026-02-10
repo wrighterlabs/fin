@@ -4,16 +4,16 @@
 const CACHE_NAME = 'currency-notifier-v1';
 const APP_SHELL = [
   './',
-  'index.html',
-  'css/app.css',
-  'icons/icon.svg',
-  'js/app.js',
-  'js/storage.js',
-  'js/exchangeApi.js',
-  'js/rulesEngine.js',
-  'js/notifications.js',
-  'js/scheduler.js',
-  'manifest.json'
+  './index.html',
+  './css/app.css',
+  './icons/icon.svg',
+  './js/app.js',
+  './js/storage.js',
+  './js/exchangeApi.js',
+  './js/rulesEngine.js',
+  './js/notifications.js',
+  './js/scheduler.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -40,6 +40,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request).then((r) => r || caches.match('index.html')))
+    fetch(event.request).catch(() => caches.match(event.request).then((r) => r || caches.match('./index.html')))
   );
 });
