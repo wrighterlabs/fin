@@ -1,0 +1,24 @@
+{
+  "name": "Currency Exchange Rate Notifier",
+  "short_name": "Rate Notifier",
+  "description": "Schedule alerts for ECB exchange rates",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#EC6426",
+  "background_color": "#FDE3CF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
