@@ -1,7 +1,7 @@
 /**
  * Service worker: caches app shell for offline; does not cache ECB API.
  */
-const CACHE_NAME = 'currency-notifier-v1';
+const CACHE_NAME = 'currency-notifier-v1.1';
 const APP_SHELL = [
   './',
   './index.html',
