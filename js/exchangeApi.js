@@ -6,6 +6,8 @@
 import { getLastECBFetchTime, setLastECBFetchTime } from './storage.js';
 
 const ECB_URL = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml';
+// ECB does not send CORS headers; use a proxy that returns the raw XML.
+const ECB_FETCH_URL = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(ECB_URL);
 
 /** @type {Record<string, number>} currency code -> rate vs EUR (EUR = 1) */
 let ratesByCurrency = {};
@@ -39,7 +41,7 @@ function parseECBXml(xml) {
  */
 export async function fetchRates() {
   try {
-    const res = await fetch(ECB_URL);
+    const res = await fetch(ECB_FETCH_URL);
     if (!res.ok) return false;
     const xml = await res.text();
     const { rates, currencies } = parseECBXml(xml);
